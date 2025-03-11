@@ -112,24 +112,38 @@ vehicle-maintenance-api/
 
 ## Endpoints de la API
 
-### Autenticación
-- POST /api/auth/login
-- POST /api/auth/register
-- GET /api/auth/me
+### Autenticación (/api/auth)
+- POST /register - Registrar nuevo usuario
+- POST /login - Iniciar sesión
+- GET /me - Obtener información del usuario actual
+- PUT /profile - Actualizar perfil de usuario
+- PUT /change-password - Cambiar contraseña
 
-### Vehículos
-- GET /api/vehicles
-- POST /api/vehicles
-- GET /api/vehicles/:id
-- PUT /api/vehicles/:id
-- DELETE /api/vehicles/:id
+### Vehículos (/api/vehicles)
+- GET / - Obtener lista de vehículos
+- POST / - Crear nuevo vehículo
+- GET /:id - Obtener detalles de un vehículo específico
+- PUT /:id - Actualizar información de un vehículo
+- DELETE /:id - Eliminar un vehículo
+- GET /:id/maintenance - Obtener historial de mantenimiento de un vehículo
+- GET /stats - Obtener estadísticas de vehículos
 
-### Mantenimiento
-- GET /api/maintenance
-- POST /api/maintenance
-- GET /api/maintenance/:id
-- PUT /api/maintenance/:id
-- DELETE /api/maintenance/:id
+### Mantenimiento (/api/maintenance)
+- GET / - Obtener lista de registros de mantenimiento
+- POST / - Crear nuevo registro de mantenimiento
+- GET /:id - Obtener detalles de un mantenimiento específico
+- PUT /:id - Actualizar información de mantenimiento
+- DELETE /:id - Eliminar un registro de mantenimiento
+- GET /stats - Obtener estadísticas de mantenimiento
+
+### Sistema
+- GET /health - Verificar estado del servidor
+
+## Tiempos de Respuesta Promedio
+- Autenticación: ~60-90ms
+- Consultas de vehículos: ~3-5ms
+- Operaciones de mantenimiento: ~3-5ms
+- Creación de registros: ~6-7ms
 
 ## Contribuir
 
@@ -138,6 +152,47 @@ vehicle-maintenance-api/
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abrir un Pull Request
+
+## Actualización del Repositorio
+
+Para mantener el código actualizado en GitHub, sigue estos pasos:
+
+1. Ver cambios pendientes:
+```bash
+git status
+```
+
+2. Agregar archivos modificados:
+```bash
+git add .
+```
+
+3. Crear un commit con los cambios:
+```bash
+git commit -m "Descripción de los cambios realizados"
+```
+
+4. Subir los cambios a GitHub:
+```bash
+git push
+```
+
+Para casos específicos:
+
+- Actualizar una rama específica:
+```bash
+git push origin nombre-rama
+```
+
+- Forzar una actualización (usar con precaución):
+```bash
+git push -f origin main
+```
+
+- Ver el estado de las ramas:
+```bash
+git branch -a
+```
 
 ## Licencia
 
